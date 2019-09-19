@@ -79,7 +79,7 @@ CREATE TABLE Reservation(
   cruiseID number,
   travelAgentID number,
   travelDate date,
-  paymentDate date,
+  paymentDate date DEFAULT NULL,
   CONSTRAINT reservationID_PK PRIMARY KEY (reservationID),
   CONSTRAINT customerID_FK FOREIGN KEY (customerID) REFERENCES Customer (customerID) ON DELETE CASCADE,
   CONSTRAINT cruiseID_FK FOREIGN KEY (cruiseID) REFERENCES Cruise (cruiseID) ON DELETE CASCADE,
@@ -133,26 +133,26 @@ INSERT INTO Cruise VALUES(cruiseID_seq.nextval, 'ABC Islands', 'Miami', 4, 'Cele
 INSERT INTO Cruise VALUES(cruiseID_seq.nextval, 'Hawaii', 'San Francisco', 14, 'Princess', 'Crown', 2310);
 INSERT INTO Cruise VALUES(cruiseID_seq.nextval, 'Panama Canal', 'Miami', 10, 'Carnival', 'Spirit', 1432.99);
 
-INSERT INTO Reservation VALUES(reservationID_seq.nextval, 12, 1, 2, '9-Nov-18', NULL);
-INSERT INTO Reservation VALUES(reservationID_seq.nextval, 14, 4, 5, '21-Jan-19', NULL);
-INSERT INTO Reservation VALUES(reservationID_seq.nextval, 5, 4, 1, '11-Dec-18', NULL);
-INSERT INTO Reservation VALUES(reservationID_seq.nextval, 9, 5, 4, '31-Aug-19', NULL);
-INSERT INTO Reservation VALUES(reservationID_seq.nextval, 13, 1, 2, '10-Apr-19', NULL);
-INSERT INTO Reservation VALUES(reservationID_seq.nextval, 5, 4, 6, '29-Jul-18', NULL);
-INSERT INTO Reservation VALUES(reservationID_seq.nextval, 2, 2, 2, '17-May-19', NULL);
-INSERT INTO Reservation VALUES(reservationID_seq.nextval, 4, 1, 10, '11-Apr-19', NULL);
-INSERT INTO Reservation VALUES(reservationID_seq.nextval, 10, 5, 3, '3-Jun-18', NULL);
-INSERT INTO Reservation VALUES(reservationID_seq.nextval, 5, 3, 9, '15-Oct-18', NULL);
-INSERT INTO Reservation VALUES(reservationID_seq.nextval, 1, 2, 7, '8-Mar-19', NULL);
-INSERT INTO Reservation VALUES(reservationID_seq.nextval, 5, 4, 7, '24-Nov-18', NULL);
-INSERT INTO Reservation VALUES(reservationID_seq.nextval, 8, 1, 1, '3-Aug-19', NULL);
-INSERT INTO Reservation VALUES(reservationID_seq.nextval, 15, 5, 10, '13-Dec-18', NULL);
-INSERT INTO Reservation VALUES(reservationID_seq.nextval, 4, 3, 7, '6-Feb-19', NULL);
-INSERT INTO Reservation VALUES(reservationID_seq.nextval, 6, 4, 5, '12-Aug-19', NULL);
-INSERT INTO Reservation VALUES(reservationID_seq.nextval, 14, 2, 8, '22-Jun-19', NULL);
-INSERT INTO Reservation VALUES(reservationID_seq.nextval, 11, 5, 9, '1-Feb-19', NULL);
-INSERT INTO Reservation VALUES(reservationID_seq.nextval, 7, 4, 8, '15-Mar-19', NULL);
-INSERT INTO Reservation VALUES(reservationID_seq.nextval, 14, 4, 3, '28-Feb-19', NULL);
+INSERT INTO Reservation (reservationID,customerID,cruiseID,travelAgentID,travelDate) VALUES(reservationID_seq.nextval, 12, 1, 2, '9-Nov-18');
+INSERT INTO Reservation (reservationID,customerID,cruiseID,travelAgentID,travelDate) VALUES(reservationID_seq.nextval, 14, 4, 5, '21-Jan-19');
+INSERT INTO Reservation (reservationID,customerID,cruiseID,travelAgentID,travelDate) VALUES(reservationID_seq.nextval, 5, 4, 1, '11-Dec-18');
+INSERT INTO Reservation (reservationID,customerID,cruiseID,travelAgentID,travelDate) VALUES(reservationID_seq.nextval, 9, 5, 4, '31-Aug-19');
+INSERT INTO Reservation (reservationID,customerID,cruiseID,travelAgentID,travelDate) VALUES(reservationID_seq.nextval, 13, 1, 2, '10-Apr-19');
+INSERT INTO Reservation (reservationID,customerID,cruiseID,travelAgentID,travelDate) VALUES(reservationID_seq.nextval, 5, 4, 6, '29-Jul-18');
+INSERT INTO Reservation (reservationID,customerID,cruiseID,travelAgentID,travelDate) VALUES(reservationID_seq.nextval, 2, 2, 2, '17-May-19');
+INSERT INTO Reservation (reservationID,customerID,cruiseID,travelAgentID,travelDate) VALUES(reservationID_seq.nextval, 4, 1, 10, '11-Apr-19');
+INSERT INTO Reservation (reservationID,customerID,cruiseID,travelAgentID,travelDate) VALUES(reservationID_seq.nextval, 10, 5, 3, '3-Jun-18');
+INSERT INTO Reservation (reservationID,customerID,cruiseID,travelAgentID,travelDate) VALUES(reservationID_seq.nextval, 5, 3, 9, '15-Oct-18');
+INSERT INTO Reservation (reservationID,customerID,cruiseID,travelAgentID,travelDate) VALUES(reservationID_seq.nextval, 1, 2, 7, '8-Mar-19');
+INSERT INTO Reservation (reservationID,customerID,cruiseID,travelAgentID,travelDate) VALUES(reservationID_seq.nextval, 5, 4, 7, '24-Nov-18');
+INSERT INTO Reservation (reservationID,customerID,cruiseID,travelAgentID,travelDate) VALUES(reservationID_seq.nextval, 8, 1, 1, '3-Aug-19');
+INSERT INTO Reservation (reservationID,customerID,cruiseID,travelAgentID,travelDate) VALUES(reservationID_seq.nextval, 15, 5, 10, '13-Dec-18');
+INSERT INTO Reservation (reservationID,customerID,cruiseID,travelAgentID,travelDate) VALUES(reservationID_seq.nextval, 4, 3, 7, '6-Feb-19');
+INSERT INTO Reservation (reservationID,customerID,cruiseID,travelAgentID,travelDate) VALUES(reservationID_seq.nextval, 6, 4, 5, '12-Aug-19');
+INSERT INTO Reservation (reservationID,customerID,cruiseID,travelAgentID,travelDate) VALUES(reservationID_seq.nextval, 14, 2, 8, '22-Jun-19');
+INSERT INTO Reservation (reservationID,customerID,cruiseID,travelAgentID,travelDate) VALUES(reservationID_seq.nextval, 11, 5, 9, '1-Feb-19');
+INSERT INTO Reservation (reservationID,customerID,cruiseID,travelAgentID,travelDate) VALUES(reservationID_seq.nextval, 7, 4, 8, '15-Mar-19');
+INSERT INTO Reservation (reservationID,customerID,cruiseID,travelAgentID,travelDate) VALUES(reservationID_seq.nextval, 14, 4, 3, '28-Feb-19');
 
 SELECT * FROM Ship;
 
